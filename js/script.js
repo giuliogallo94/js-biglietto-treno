@@ -28,7 +28,7 @@ const underPrice = standardPrice - standardPrice * 0.2;
 const overPrice = standardPrice - standardPrice * 0.4;
 
 let finalPrice = "";
-let price = "Giulio";
+let price = "";
 
 if (age < 18) {
   finalPrice = underPrice;
