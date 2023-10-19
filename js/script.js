@@ -6,12 +6,17 @@ const name = prompt(
 );
 console.log(name);
 
-const kmToTravel = prompt(
-  `${name} iniziamo con la prima domanda, quanti km intendi percorrere?`
+const kmToTravel = parseInt(
+  prompt(`${name} iniziamo con la prima domanda, quanti km intendi percorrere?`)
 );
+
+// Messaggio da mostrare in caso l'utente non inserisca un numero
+if (isNaN(kmToTravel)) {
+  console.log("Inserire un numero");
+}
 console.log(kmToTravel);
 
-const age = prompt(`Per favore ${name} indicaci anche la tua età?`);
+const age = parseInt(prompt(`Per favore ${name} indicaci anche la tua età?`));
 console.log(age);
 
 // Logica
@@ -33,7 +38,7 @@ if (age < 18) {
   price = " con sconto del 40%";
 } else {
   finalPrice = standardPrice;
-  price = " con la tariffa standar";
+  price = " con la tariffa standard";
 }
 
 console.log(finalPrice + price);
@@ -42,5 +47,5 @@ console.log(finalPrice + price);
 document.getElementById(
   "finalPrice"
 ).innerHTML = `Caro ${name} l'offerta che ti proponiamo è di €${
-  finalPrice + price
+  finalPrice.toFixed(2) + price
 }`;
